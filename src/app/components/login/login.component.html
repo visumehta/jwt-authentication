@@ -1,0 +1,27 @@
+<div style="max-width: 400px; margin: 0 auto; padding: 20px">
+  <h2>Login</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div style="margin-bottom: 10px">
+      <label style="display: block">Username:</label>
+      <input
+        type="text"
+        [(ngModel)]="username"
+        name="username"
+        style="width: 100%; padding: 5px"
+      />
+    </div>
+    <div style="margin-bottom: 10px">
+      <label style="display: block">Password:</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        style="width: 100%; padding: 5px"
+      />
+    </div>
+    <button type="submit" style="padding: 5px 10px">Login</button>
+  </form>
+  @if(error()) {
+  <p style="color: red">{{ error() }}</p>
+  }
+</div>

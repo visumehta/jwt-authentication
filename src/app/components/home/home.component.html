@@ -1,0 +1,19 @@
+<div style="max-width: 800px; margin: 0 auto; padding: 20px">
+  <h2>Welcome</h2>
+  @if(authService.state().isAuthenticated) {
+
+  <p>
+    You are logged in!
+    <button (click)="authService.logout()" style="margin-left: 10px">
+      Logout
+    </button>
+  </p>
+  }
+
+  <div style="margin-top: 20px">
+    <button (click)="getProtectedData()">Get Protected Data</button>
+    @if(protectedData()) {
+    <pre>{{ protectedData() | json }}</pre>
+    }
+  </div>
+</div>
