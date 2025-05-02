@@ -16,7 +16,7 @@ export class HomeComponent {
   protectedData = signal<any>(null);
 
   getProtectedData() {
-    this.http.get('http://localhost:3000/protected').subscribe({
+    this.http.get('http://localhost:3001/protected').subscribe({
       next: (data) => this.protectedData.set(data),
       error: () =>
         this.protectedData.set({ error: 'Failed to fetch protected data' }),
